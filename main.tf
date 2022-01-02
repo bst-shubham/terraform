@@ -6,6 +6,11 @@ terraform {
     dynamodb_table = "S3-Terraform-Statefile-Table"
   }
 }
+
+provider "aws" {
+    region = var.region
+}
+
 resource "aws_vpc" "NowggVpc" {
     cidr_block = var.VpcCidrBlock
     instance_tenancy = var.InstanceTenancy
